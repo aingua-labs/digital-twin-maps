@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Digital Twin maps</title>
+<style>
+  :root{--bg:#0b1020;--card:#141b33;--line:#26304f;--ink:#eef2ff;--mute:#9aa6c7;--a:#F2994A;--b:#1B7FD4}
+  @media (prefers-color-scheme: light){:root{--bg:#f5f7fc;--card:#fff;--line:#dbe1ef;--ink:#131a2e;--mute:#5a6684;--a:#C2611A;--b:#1466B3}}
+  *{box-sizing:border-box}
+  body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:var(--bg);color:var(--ink);
+       font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;padding:32px 20px}
+  main{width:100%;max-width:880px}
+  h1{font-size:clamp(28px,5vw,44px);line-height:1.1;margin:0 0 10px;letter-spacing:-.02em}
+  p.lead{color:var(--mute);margin:0 0 32px;max-width:60ch}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+  a.card{display:block;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:14px;
+         padding:24px;transition:transform .15s,border-color .15s}
+  a.card:hover,a.card:focus-visible{transform:translateY(-3px);border-color:var(--c);outline:none}
+  .dot{width:12px;height:12px;border-radius:50%;background:var(--c);display:inline-block;margin-bottom:14px}
+  h2{font-size:21px;margin:0 0 6px}
+  .card p{margin:0 0 16px;color:var(--mute);font-size:15px}
+  .go{font-weight:600;color:var(--c)}
+  footer{margin-top:28px;color:var(--mute);font-size:13px}
+</style>
+</head>
+<body>
+<main>
+  <h1>Digital Twin maps</h1>
+  <p class="lead">Two interactive 3D maps of the Digital Twin platform. Drag to rotate, scroll to zoom, click any node for detail. Each map has a guided demo.</p>
+  <div class="grid">
+    <a class="card" style="--c:var(--a)" href="product-map.html">
+      <span class="dot"></span>
+      <h2>Product map</h2>
+      <p>The platform by product area, feature, twin type, user and benefit.</p>
+      <span class="go">Open the product map &rarr;</span>
+    </a>
+    <a class="card" style="--c:var(--b)" href="use-case-map.html">
+      <span class="dot"></span>
+      <h2>Use case map</h2>
+      <p>Use cases organised by industry, business function and business outcome.</p>
+      <span class="go">Open the use case map &rarr;</span>
+    </a>
+  </div>
+  <footer>Best viewed in a current version of Chrome, Edge, Safari or Firefox with WebGL enabled.</footer>
+</main>
+</body>
+</html>
