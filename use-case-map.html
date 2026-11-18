@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -2145,7 +2145,7 @@ Array.prototype.forEach.call(document.querySelectorAll("#views button"),function
   b.addEventListener("keydown",function(e){if(e.key!=="ArrowRight"&&e.key!=="ArrowLeft")return;var l=Array.prototype.slice.call(document.querySelectorAll("#views button")),i=l.indexOf(b),n=l[(i+(e.key==="ArrowRight"?1:-1)+l.length)%l.length];n.focus();setView(n.getAttribute("data-v"));});});
 window.addEventListener("resize",function(){if(view==="network")return;clearTimeout(vwT);vwT=setTimeout(function(){viewRender();},160);});
 ucSelect();ucSrcSelect();ucIndSelect();cats();moms();kpiRender();rank();setMode("explore");intentRender();pvUpdate();
-var saved="auto";try{saved=localStorage.getItem("onto-theme")||(root.getAttribute("data-theme")||"auto");}catch(e){}
+var saved="light";try{saved=localStorage.getItem("onto-theme")||(root.getAttribute("data-theme")||"light");}catch(e){}
 if(window.__DT_THEME)saved=window.__DT_THEME;
 setTheme(saved,false);
 route();
