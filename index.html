@@ -5,17 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Digital Twin maps</title>
 <style>
-  :root{--bg:#0b1020;--card:#141b33;--line:#26304f;--ink:#eef2ff;--mute:#9aa6c7;--a:#F2994A;--b:#1B7FD4}
-  @media (prefers-color-scheme: light){:root{--bg:#f5f7fc;--card:#fff;--line:#dbe1ef;--ink:#131a2e;--mute:#5a6684;--a:#C2611A;--b:#1466B3}}
+  :root{--bg:#f5f4ee;--card:rgba(255,255,255,.86);--line:#dbe1ef;--ink:#131a2e;--mute:#4d5876;--a:#C2611A;--b:#1466B3;color-scheme:light}
   *{box-sizing:border-box}
-  body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:var(--bg);color:var(--ink);
+  body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:var(--bg) url(home-bg.jpg) center/cover no-repeat fixed;color:var(--ink);
        font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;padding:32px 20px}
   main{width:100%;max-width:880px}
   h1{font-size:clamp(28px,5vw,44px);line-height:1.1;margin:0 0 10px;letter-spacing:-.02em}
   p.lead{color:var(--mute);margin:0 0 32px;max-width:60ch}
   .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
   a.card{display:block;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:14px;
-         padding:24px;transition:transform .15s,border-color .15s}
+         padding:24px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);box-shadow:0 6px 24px rgba(19,26,46,.08);transition:transform .15s,border-color .15s}
   a.card:hover,a.card:focus-visible{transform:translateY(-3px);border-color:var(--c);outline:none}
   .dot{width:12px;height:12px;border-radius:50%;background:var(--c);display:inline-block;margin-bottom:14px}
   h2{font-size:21px;margin:0 0 6px}
