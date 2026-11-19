@@ -8,6 +8,8 @@ import { tools } from "./tambo/tools";
 
 const apiKey = import.meta.env.VITE_TAMBO_API_KEY as string | undefined;
 const live = !!apiKey && apiKey !== "your_api_key_here";
+/** Address of a self-hosted Tambo API, e.g. http://localhost:8261. Leave unset to use Tambo Cloud. */
+const tamboUrl = (import.meta.env.VITE_TAMBO_URL as string | undefined) || undefined;
 
 /** Threads are kept per visitor. Swap this for your signed-in user's id when the app has sign-in. */
 function visitorKey() {
@@ -34,7 +36,7 @@ export default function App() {
   // Without a key the app still runs, showing a sample conversation, so the layout and cards can be reviewed.
   if (!live) return <TamboStubProvider components={components} tools={tools} thread={sampleThread}><Shell /></TamboStubProvider>;
   return (
-    <TamboProvider apiKey={apiKey} userKey={visitorKey()} components={components} tools={tools} contextHelpers={contextHelpers}>
+    <TamboProvider apiKey={apiKey} tamboUrl={tamboUrl} userKey={visitorKey()} components={components} tools={tools} contextHelpers={contextHelpers}>
       <Shell />
     </TamboProvider>
   );

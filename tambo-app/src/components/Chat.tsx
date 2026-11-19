@@ -75,7 +75,7 @@ export function Chat({ live }: { live: boolean }) {
         <textarea
           rows={1}
           value={value}
-          placeholder={live ? "For example: our support experts are a bottleneck" : "Add a Tambo API key to start asking"}
+          placeholder={live ? "For example: our support experts are a bottleneck" : "Connect a Tambo server to start asking"}
           disabled={!live || isDisabled}
           onChange={(e) => setValue(e.target.value)}
           onKeyDown={(e) => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); send(); } }}
@@ -85,7 +85,7 @@ export function Chat({ live }: { live: boolean }) {
       </form>
       {!live && (
         <p className="setup">
-          Preview mode: the cards above are a sample. Run <code>npx tambo init</code>, put the key in <code>.env.local</code> as <code>VITE_TAMBO_API_KEY</code> and restart.
+          Preview mode: the cards above are a sample. Set <code>VITE_TAMBO_URL</code> and <code>VITE_TAMBO_API_KEY</code> in <code>.env.local</code> (see the README) and restart.
         </p>
       )}
     </aside>
