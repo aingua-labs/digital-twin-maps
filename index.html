@@ -125,6 +125,27 @@
     a.card,.more,.go i,.story .txt{transition:none}
   }
 </style>
+<script>
+/* Click events on top of GoatCounter page views. No cookies. A link ending ?for=label tags that visit as "visitor/label/...". */
+(function(){
+  var label="",q=[];
+  try{var m=/[?&]for=([A-Za-z0-9_-]{1,40})/.exec(location.search);
+    if(m){label=m[1].toLowerCase();sessionStorage.setItem("dt-for",label);}else label=sessionStorage.getItem("dt-for")||"";}catch(e){}
+  function send(path,title){
+    if(window.goatcounter&&window.goatcounter.count){try{window.goatcounter.count({path:path,title:title||path,event:true});}catch(e){}}
+    else if(q.length<50)q.push([path,title]);
+  }
+  window.dtTrack=function(path,title){
+    try{
+      if(window.__DT_EMBED){if(window.parent&&window.parent!==window&&window.parent.dtTrack)window.parent.dtTrack(path,title);return;}
+      send(path,title);if(label)send("visitor/"+label+"/"+path,title);
+    }catch(e){}
+  };
+  var t=setInterval(function(){if(window.goatcounter&&window.goatcounter.count){clearInterval(t);var x=q;q=[];x.forEach(function(a){send(a[0],a[1]);});}},500);
+  setTimeout(function(){clearInterval(t);},20000);
+  if(label&&!window.__DT_EMBED){var pg=location.pathname.replace(/^.*\//,"").replace(/\.html$/,"")||"home";if(pg==="index")pg="home";send("visitor/"+label+"/opened/"+pg,"Opened "+pg);}
+})();
+</script>
 <script data-goatcounter="https://digital-twin-maps.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
 <body>
