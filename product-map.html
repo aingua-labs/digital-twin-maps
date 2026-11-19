@@ -1407,8 +1407,8 @@ var DEFQ={"question": "What did we decide on the Q3 supplier change, and why?", 
 var UC_FILE="digital-twin-use-case-map-3d-offline.html";
 var CH=["Set up","Concept","Details","Architecture","Data privacy","Use case"];
 var STATIONS=[
- {k:"Ask",t:"A question is asked",p:"In the web app, Slack, Teams or another AI tool.",f:["s_web","s_slack","s_mcp"]},
- {k:"Scope",t:"Sign-in and twin scope",p:"Single sign-on identifies the person, and the twin loads its allowed sources and rules.",f:["g_sso","e_run"]},
+ {k:"Ask",t:"Someone asks a question",p:"They ask where they already work: the web app, Slack, Teams or another AI tool.",f:["s_web","s_slack","s_mcp"]},
+ {k:"Identify",t:"The twin checks who is asking",p:"Their company login confirms who they are. The twin then loads the sources and rules set up for it.",f:["g_sso","e_run"]},
  {k:"Permissions",t:"Permission check",p:"Only content this person is allowed to see is eligible.",f:["g_perm","g_vis"]},
  {k:"Retrieve",t:"Find the evidence",p:"Keyword and semantic search across indexed sources, plus live lookups where supported.",f:["e_index","i_live","e_agent"],src:true},
  {k:"Reason",t:"Reason with expertise",p:"Evidence is combined with the expert's reviewed knowledge and playbooks.",f:["e_rep","c_art"]},
